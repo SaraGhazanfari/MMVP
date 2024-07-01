@@ -72,14 +72,16 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             else:
                 # this is probably from HF Hub
                 from huggingface_hub import hf_hub_download
-                cache_dir='$SCRATCH/code/mmvp'
+                cache_dir = '$SCRATCH/code/mmvp'
                 os.environ['HF_HUB_CACHE'] = cache_dir
+
                 def load_from_hf(repo_id, filename, subfolder=None):
                     cache_file = hf_hub_download(
                         repo_id=repo_id,
                         filename=filename,
                         subfolder=subfolder,
                         cache_dir=cache_dir)
+
                     return torch.load(cache_file, map_location='cpu')
 
                 non_lora_trainables = load_from_hf(model_path, 'non_lora_trainables.bin')
@@ -148,6 +150,8 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             print('Convert to FP16...')
             model.to(torch.float16)
         else:
+            cache_dir = '$SCRATCH/code/mmvp'
+            os.environ['HF_HUB_CACHE'] = cache_dir
             use_fast = False
             if 'mpt' in model_name.lower():
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
@@ -155,7 +159,8 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                                                              **kwargs)
             else:
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-                model = AutoModelForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
+                model = AutoModelForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, cache_dir=cache_dir,
+                                                             **kwargs)
 
     image_processor = None
 
