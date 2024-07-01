@@ -3,18 +3,21 @@ import json
 import openai
 import re
 import time
+
 # Create the parser
 parser = argparse.ArgumentParser(description='Process OpenAI API key and JSONL file path.')
 
 # Add arguments
-parser.add_argument('--openai_api_key', default = "", help='Your OpenAI API key')
-parser.add_argument('--answer_file', default = "answer.jsonl",help='Path to the JSONL file')
+parser.add_argument('--openai_api_key', default="", help='Your OpenAI API key')
+parser.add_argument('--answer_file', default="answer.jsonl", help='Path to the JSONL file')
 
 # Parse arguments
 args = parser.parse_args()
 
 openai.api_key = args.openai_api_key
 NUM_SECONDS_TO_SLEEP = 10
+
+
 # Define a function to query the OpenAI API and evaluate the answer
 def get_yes_no_answer(question):
     while True:
@@ -58,7 +61,7 @@ with open(args.answer_file, 'r') as file:
 
         index += 1
 
-        if gpt_grade=="yes":
+        if gpt_grade == "yes":
             round_correct += 1
         if index == 2:
             index = 0
@@ -67,4 +70,7 @@ with open(args.answer_file, 'r') as file:
             round_correct = 0
 
             num_total += 1
-print(f"The accuracy is {num_correct/num_total}")
+
+        print(line)
+        print(num_correct, num_total, num_correct / num_total)
+print(f"The accuracy is {num_correct / num_total}")
