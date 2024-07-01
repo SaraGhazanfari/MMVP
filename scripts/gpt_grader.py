@@ -35,8 +35,10 @@ def get_yes_no_answer(question):
             )
             break
         except openai.error.RateLimitError:
+            print('openai.error.RateLimitError')
             pass
         except Exception as e:
+            print(some, e)
             print(e)
         time.sleep(NUM_SECONDS_TO_SLEEP)
 
