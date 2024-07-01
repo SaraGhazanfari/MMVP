@@ -26,6 +26,8 @@ from llava.model import *
 def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, load_4bit=False, device_map="auto",
                           device="cuda", use_flash_attn=False, **kwargs):
     kwargs = {"device_map": device_map, **kwargs}
+    cache_dir = '$SCRATCH/code/mmvp'
+    os.environ['HF_HUB_CACHE'] = cache_dir
 
     if device != "cuda":
         kwargs['device_map'] = {"": device}
@@ -72,8 +74,6 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             else:
                 # this is probably from HF Hub
                 from huggingface_hub import hf_hub_download
-                cache_dir = '$SCRATCH/code/mmvp'
-                os.environ['HF_HUB_CACHE'] = cache_dir
 
                 def load_from_hf(repo_id, filename, subfolder=None):
                     cache_file = hf_hub_download(
@@ -134,6 +134,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                 model = LlavaLlamaForCausalLM.from_pretrained(
                     model_path,
                     low_cpu_mem_usage=True,
+                    cache_dir=cache_dir
                     **kwargs
                 )
     else:
@@ -150,8 +151,6 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             print('Convert to FP16...')
             model.to(torch.float16)
         else:
-            cache_dir = '$SCRATCH/code/mmvp'
-            os.environ['HF_HUB_CACHE'] = cache_dir
             use_fast = False
             if 'mpt' in model_name.lower():
                 tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
