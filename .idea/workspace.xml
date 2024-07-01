@@ -48,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719843581530</updated>
       <workItem from="1719843582694" duration="2017000" />
-      <workItem from="1719853211482" duration="10109000" />
+      <workItem from="1719853211482" duration="10727000" />
     </task>
     <task id="LOCAL-00001" summary="change llava">
       <created>1719843850946</created>
@@ -204,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719871862632</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="first commit">
+      <created>1719872158363</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1719872158363</updated>
+    </task>
+    <task id="LOCAL-00024" summary="first commit">
+      <created>1719872217585</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1719872217585</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
