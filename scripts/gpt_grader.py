@@ -23,7 +23,7 @@ def get_yes_no_answer(question):
     while True:
         try:
             response = openai.ChatCompletion.create(
-                model='gpt-4-0613',
+                model='gpt-3.5-turbo',
                 messages=[{
                     'role': 'system',
                     'content': 'You are a helpful and precise assistant for checking the quality of the answer. Please answer in only yes or no.'
