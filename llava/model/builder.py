@@ -78,7 +78,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                         repo_id=repo_id,
                         filename=filename,
                         subfolder=subfolder,
-                        cache_dir='$SCRATCH/code/mmvp')
+                        cache_dir='$SCRATCH/code/mmvp', local_dir='$SCRATCH/code/mmvp')
                     return torch.load(cache_file, map_location='cpu')
 
                 non_lora_trainables = load_from_hf(model_path, 'non_lora_trainables.bin')
