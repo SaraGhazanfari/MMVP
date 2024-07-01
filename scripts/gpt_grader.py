@@ -54,6 +54,7 @@ num_correct, num_total = 0, 0
 with open(args.answer_file, 'r') as file:
     index, round_correct = 0, 0
     for line in file:
+        print(line)
         data = json.loads(line)
         question, correct_answer, model_response = data["prompt"], data["answer"], data["response"]
         question4gpt = f"Given the following question {question}, the correct answer is {correct_answer}. Does the following answer correctly answers the question, answer:{model_response}?"
@@ -71,6 +72,5 @@ with open(args.answer_file, 'r') as file:
 
             num_total += 1
 
-        print(line)
         print(num_correct, num_total, num_correct / num_total)
 print(f"The accuracy is {num_correct / num_total}")
