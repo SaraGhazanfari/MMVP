@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3e2e796-9971-4cc7-8676-647e5f922bd1" name="Changes" comment="change llava">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="f3e2e796-9971-4cc7-8676-647e5f922bd1" name="Changes" comment="first commit">
+      <change beforePath="$PROJECT_DIR$/llava/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/llava/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ieGMYaSZ1IkPUU4HkqnZm5uMV5" />
   <component name="ProjectViewState">
@@ -25,12 +28,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/saraghazanfari/PycharmProjects/MMVP",
+    "last_opened_file_path": "/Users/saraghazanfari/PycharmProjects/mmvp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719843581530</updated>
       <workItem from="1719843582694" duration="2017000" />
+      <workItem from="1719853211482" duration="306000" />
     </task>
     <task id="LOCAL-00001" summary="change llava">
       <created>1719843850946</created>
@@ -51,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719843850946</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1719853231192</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719853231192</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -59,6 +71,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change llava" />
-    <option name="LAST_COMMIT_MESSAGE" value="change llava" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
