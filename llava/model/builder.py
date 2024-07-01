@@ -73,7 +73,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
                 # this is probably from HF Hub
                 from huggingface_hub import hf_hub_download
                 cache_dir='$SCRATCH/code/mmvp'
-                os.environ['HF_HOME'] = cache_dir
+                os.environ['HF_HUB_CACHE'] = cache_dir
                 def load_from_hf(repo_id, filename, subfolder=None):
                     cache_file = hf_hub_download(
                         repo_id=repo_id,
