@@ -22,8 +22,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig, BitsAn
 from llava.constants import DEFAULT_IMAGE_PATCH_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 from llava.model import *
 
-os.environ['HF_HOME'] = '$SCRATCH/code/mmvp'
-
 
 def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, load_4bit=False, device_map="auto",
                           device="cuda", use_flash_attn=False, **kwargs):
@@ -74,6 +72,8 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
             else:
                 # this is probably from HF Hub
                 from huggingface_hub import hf_hub_download
+                os.environ['HF_HOME'] = '$SCRATCH/code/mmvp'
+
                 def load_from_hf(repo_id, filename, subfolder=None):
                     cache_file = hf_hub_download(
                         repo_id=repo_id,
